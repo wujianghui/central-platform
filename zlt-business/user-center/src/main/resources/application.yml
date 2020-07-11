@@ -13,6 +13,23 @@ mybatis-plus:
     db-config:
       id-type: auto
 
+#dubbo:
+#  scan:
+#    # dubbo 服务扫描基准包
+#    base-packages: com.central
+#  protocol:
+#    # dubbo 协议
+#    name: dubbo
+#    # dubbo 协议端口（ -1 表示自增端口，从 20880 开始）
+#    port: -1
+#  registry:
+#    address: nacos://127.0.0.1:8848
+#    parameters:
+#      namespace: 0caa9362-e7b1-4eff-8997-5bb375016277
+
+
+
+
 zlt:
   swagger:
     enabled: true
