@@ -50,6 +50,7 @@ public class MybatisPlusAutoConfigure {
                     .setTenantHandler(tenantHandler);
             paginationInterceptor.setSqlParserList(CollUtil.toList(tenantSqlParser));
             paginationInterceptor.setSqlParserFilter(sqlParserFilter);
+            paginationInterceptor.setLimit(-1);
         }
         return paginationInterceptor;
     }
