@@ -15,24 +15,58 @@ mybatis-plus:
 
 
 
-dubbo:
-  scan:
-    # dubbo 服务扫描基准包
-    base-packages: com.central
-  protocol:
-    # dubbo 协议
-    name: dubbo
-    # dubbo 协议端口（ -1 表示自增端口，从 20880 开始）
-    port: -1
-  registry:
-    address: nacos://${spring.cloud.nacos.server-addr}
-    parameters:
-      namespace: ${spring.cloud.nacos.discovery.namespace}
+#dubbo:
+#  scan:
+#    # dubbo 服务扫描基准包
+#    base-packages: com.central
+#  protocol:
+#    # dubbo 协议
+#    name: dubbo
+#    # dubbo 协议端口（ -1 表示自增端口，从 20880 开始）
+#    port: -1
+#  registry:
+#    address: nacos://${spring.cloud.nacos.server-addr}
+#    parameters:
+#      namespace: ${spring.cloud.nacos.discovery.namespace}
 
 
 
 
 zlt:
+  oauth2:
+    token:
+      store:
+        type: redis
+  security:
+    ignore:
+      # 忽略认证的地址
+      httpUrls: >
+        /api-uaa/oauth/**,
+        /api-uaa/validata/**,
+        /api-uaa/css/**,
+        /api-uaa/images/**,
+        /api-uaa/js/**,
+        /api-user/users-anon/**,
+        /login.html,
+        /user/login
+    auth:
+      urlPermission:
+        #是否开启url级别权限
+        enable: false
+        #配置只进行登录认证，不进行url权限认证的api
+        ignoreUrls: >
+          /api-user/menus/current,
+          /api-user/users/current,
+          /api-log/requestStat
+        #白名单
+        includeClientIds:
+          - webApp
+      renew:
+        #是否开启token自动续签（目前只有redis实现）
+        enable: true
+        #白名单
+        includeClientIds:
+          - webApp
   swagger:
     enabled: true
     title: 用户中心
