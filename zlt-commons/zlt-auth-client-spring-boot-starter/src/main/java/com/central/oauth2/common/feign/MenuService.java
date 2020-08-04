@@ -1,8 +1,8 @@
-package com.central.gateway.feign;
+package com.central.oauth2.common.feign;
 
 import com.central.common.constant.ServiceNameConstants;
 import com.central.common.model.SysMenu;
-import com.central.gateway.feign.fallback.MenuServiceFallbackFactory;
+import com.central.oauth2.common.feign.fallback.MenuServiceFallbackFactory;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
