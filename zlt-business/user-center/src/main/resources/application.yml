@@ -15,19 +15,19 @@ mybatis-plus:
 
 
 
-dubbo:
-  scan:
-    # dubbo 服务扫描基准包
-    base-packages: com.central
-  protocol:
-    # dubbo 协议
-    name: dubbo
-    # dubbo 协议端口（ -1 表示自增端口，从 20880 开始）
-    port: -1
-  registry:
-    address: nacos://${spring.cloud.nacos.server-addr}
-    parameters:
-      namespace: ${spring.cloud.nacos.discovery.namespace}
+#dubbo:
+#  scan:
+#    # dubbo 服务扫描基准包
+#    base-packages: com.central
+#  protocol:
+#    # dubbo 协议
+#    name: dubbo
+#    # dubbo 协议端口（ -1 表示自增端口，从 20880 开始）
+#    port: -1
+#  registry:
+#    address: nacos://${spring.cloud.nacos.server-addr}
+#    parameters:
+#      namespace: ${spring.cloud.nacos.discovery.namespace}
 
 
 
