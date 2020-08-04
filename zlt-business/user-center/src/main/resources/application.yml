@@ -47,6 +47,7 @@ zlt:
         /api-uaa/images/**,
         /api-uaa/js/**,
         /api-user/users-anon/**,
+        /users-anon/**,
         /login.html,
         /user/login
     auth:
