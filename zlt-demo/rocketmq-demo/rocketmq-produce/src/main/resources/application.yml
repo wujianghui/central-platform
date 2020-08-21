@@ -2,6 +2,12 @@ server:
   port: 11004
 
 spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /snow-dev
   application:
     name: rocketmq-produce
   cloud:

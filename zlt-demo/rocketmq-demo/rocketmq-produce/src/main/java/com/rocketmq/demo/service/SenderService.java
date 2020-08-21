@@ -32,6 +32,7 @@ public class SenderService {
 				.setHeader(MessageConst.PROPERTY_TAGS, tag)
 				.setHeader(MessageHeaders.CONTENT_TYPE, MimeTypeUtils.APPLICATION_JSON)
 				.build();
-		source.output().send(message);
+		boolean g= source.output().send(message);
+		System.out.println(g);
 	}
 }

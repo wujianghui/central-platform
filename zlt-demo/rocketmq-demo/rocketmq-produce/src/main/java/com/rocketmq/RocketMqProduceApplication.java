@@ -1,5 +1,6 @@
 package com.rocketmq;
 
+import com.rocketmq.demo.config.MsgProducer;
 import com.rocketmq.demo.model.Order;
 import com.rocketmq.demo.service.SenderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,19 +31,23 @@ public class RocketMqProduceApplication {
      */
     public static class CustomRunner implements CommandLineRunner {
         @Autowired
-        private SenderService senderService;
+        private MsgProducer msgProducer;
+
+
+
 
         @Override
         public void run(String... args) {
+            msgProducer.sendMsg("111");
             int count = 5;
-            for (int index = 1; index <= count; index++) {
-                String msgContent = "msg-" + index;
-                if (index % 2 == 0) {
-                    senderService.send(msgContent);
-                } else {
-                    senderService.sendWithTags(new Order((long)index, "order-"+index), "tagObj");
-                }
-            }
+//            for (int index = 1; index <= count; index++) {
+//                String msgContent = "msg-" + index;
+//                if (index % 2 == 0) {
+//                    senderService.send(msgContent);
+//                } else {
+//                    senderService.sendWithTags(new Order((long)index, "order-"+index), "tagObj");
+//                }
+//            }
         }
     }
 }
